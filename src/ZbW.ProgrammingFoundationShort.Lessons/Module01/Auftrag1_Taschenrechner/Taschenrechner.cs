@@ -32,10 +32,26 @@ public static class Taschenrechner
     //           return;
     //         }
 
+    Console.Write("Erste Zahl: ");
+    if (!double.TryParse(Console.ReadLine() ?? "", out double zahl1))
+    {
+      Console.WriteLine("Ungültige Zahl.");
+      return;
+    }
+
     // TODO 2: Zweite Zahl einlesen (gleiche Technik wie TODO 1)
+
+    Console.Write("Zweite Zahl: ");
+    if (!double.TryParse(Console.ReadLine() ?? "", out double zahl2))
+    {
+      Console.WriteLine("Ungültige Zahl.");
+      return;
+    }
 
     // TODO 3: Operation einlesen (+, -, *, /)
     //         string operation = Console.ReadLine() ?? "";
+
+    string operation = Console.ReadLine() ?? "";
 
     // TODO 4: Berechnen mit if / else if
     //         if (operation == "+") { result = zahl1 + zahl2; }
@@ -43,7 +59,38 @@ public static class Taschenrechner
     //         ...
     //         Achtung: Bei "/" zuerst prüfen, ob zahl2 == 0 ist!
     //         Unbekannte Operation → Meldung ausgeben
+    double result = 0;
+    if (operation == "+")
+    {
+      result = zahl1 + zahl2;
+    }
+    else if (operation == "-")
+    {
+      result = zahl1 - zahl2;
+    }
+    else if (operation == "*")
+    {
+      result = zahl1 * zahl2;
+    }
+    else if (operation == "/")
+    {
+      if (zahl2 == 0)
+      {
+        Console.Write("Division durch 0 nicht erlaubt!");
+        return;
+      }
+      else
+      {
+        result = zahl1 / zahl2;
+      }
+    }
+    else
+    {
+      Console.WriteLine($"Unbekannte Operation: '{operation}'");
+      return;
+    }
 
     // TODO 5: Ergebnis ausgeben: $"Ergebnis: {result:F2}"
+    Console.Write($"Ergebnis: {result:F2}");
   }
 }
