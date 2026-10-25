@@ -5,4 +5,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Meine_Loesungen\Module01_Loesungen\Aufgabe01_BMI\" />
+  </ItemGroup>
+
 </Project>
