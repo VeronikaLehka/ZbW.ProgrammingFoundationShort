@@ -17,7 +17,7 @@ namespace ZbW.ProgrammingFoundationShort.Lessons.Module01.Auftrag2_Temperaturrec
 public partial class TemperaturrechnerForm : Form
 {
   // TODO 1: Konstante für den absoluten Nullpunkt definieren
-  //         private const double AbsoluteZero = -273.15;
+  private const double AbsoluteZero = -273.15;
 
   public TemperaturrechnerForm()
   {
@@ -27,24 +27,48 @@ public partial class TemperaturrechnerForm : Form
   // ── Celsius → Fahrenheit ────────────────────────────────────
   private void CmdCelsiusToFahrenheit_Click(object sender, EventArgs e)
   {
-    // TODO 2: Wert aus TxtCelsius lesen (double.TryParse)
-    //         Bei ungültiger Eingabe: MessageBox anzeigen und return
+    double celsius;
 
-    // TODO 3: Prüfen ob Wert < AbsoluteZero
-    //         → MessageBox mit Warnung, aber weiter rechnen
-
-    // TODO 4: Formel anwenden: fahrenheit = celsius * 9.0 / 5.0 + 32
-
-    // TODO 5: Ergebnis in TxtFahrenheit anzeigen ($"{fahrenheit:F2}")
+    if (double.TryParse(TxtCelsius.Text, out celsius))
+    {
+      if (celsius < AbsoluteZero)
+      {
+        MessageBox.Show("Eingabe unter AbsoluteZero");
+      }
+    }
+    else
+    {
+      MessageBox.Show("Ungültige Eingabe");
+      TxtFahrenheit.Clear();
+      return;
+    }
+    double fahrenheit = celsius * 9.0 / 5.0 + 32;
+    TxtFahrenheit.Text = $"{fahrenheit:F2}";
   }
 
   // ── Fahrenheit → Celsius ────────────────────────────────────
   private void CmdFahrenheitToCelsius_Click(object sender, EventArgs e)
   {
-    // TODO 6: Wert aus TxtFahrenheit lesen (double.TryParse)
-    //         Bei ungültiger Eingabe: MessageBox anzeigen und return
+    double celsius;
+    double fahrenheit;
 
-    // TODO 7: Formel anwenden: celsius = (fahrenheit - 32) * 5.0 / 9.0
+    if (double.TryParse(TxtFahrenheit.Text, out fahrenheit))
+    {
+      celsius = (fahrenheit - 32) * 5.0 / 9.0;
+      if (celsius < AbsoluteZero)
+      {
+        MessageBox.Show("Eingabe unter AbsoluteZero");
+      }
+    }
+    else
+    { 
+      MessageBox.Show("Ungültige Eingabe");
+      TxtFahrenheit.Clear();
+      return;
+    }
+    TxtCelsius.Text = $"{celsius:F2}";
+
+
 
     // TODO 8: Prüfen ob Ergebnis < AbsoluteZero → Warnung
 
