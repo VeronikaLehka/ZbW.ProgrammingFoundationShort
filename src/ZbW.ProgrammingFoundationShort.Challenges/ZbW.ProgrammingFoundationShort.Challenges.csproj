@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Meine_Loesungen\Module01_Loesungen\Aufgabe01_BMI\" />
+    <Compile Remove="Meine_Loesungen\Module01_Loesungen\**" />
+    <EmbeddedResource Remove="Meine_Loesungen\Module01_Loesungen\**" />
+    <None Remove="Meine_Loesungen\Module01_Loesungen\**" />
   </ItemGroup>
 
 </Project>
