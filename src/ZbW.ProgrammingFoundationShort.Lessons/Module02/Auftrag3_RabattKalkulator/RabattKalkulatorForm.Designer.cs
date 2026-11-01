@@ -24,74 +24,110 @@ partial class RabattKalkulatorForm
     LblErgebnis = new Label();
     GrpKundentyp.SuspendLayout();
     SuspendLayout();
-
+    // 
     // LblBetrag
+    // 
     LblBetrag.AutoSize = true;
-    LblBetrag.Location = new Point(12, 20);
+    LblBetrag.Location = new Point(14, 27);
+    LblBetrag.Name = "LblBetrag";
+    LblBetrag.Size = new Size(97, 20);
+    LblBetrag.TabIndex = 0;
     LblBetrag.Text = "Betrag (CHF):";
-
+    // 
     // TxtBetrag
-    TxtBetrag.Location = new Point(130, 17);
+    // 
+    TxtBetrag.Location = new Point(149, 23);
+    TxtBetrag.Margin = new Padding(3, 4, 3, 4);
     TxtBetrag.Name = "TxtBetrag";
-    TxtBetrag.Size = new Size(100, 23);
-
+    TxtBetrag.Size = new Size(114, 27);
+    TxtBetrag.TabIndex = 1;
+    // 
     // GrpKundentyp
-    GrpKundentyp.Location = new Point(12, 50);
-    GrpKundentyp.Name = "GrpKundentyp";
-    GrpKundentyp.Size = new Size(220, 95);
-    GrpKundentyp.Text = "Kundentyp";
+    // 
     GrpKundentyp.Controls.Add(RadNormal);
     GrpKundentyp.Controls.Add(RadPremium);
     GrpKundentyp.Controls.Add(RadVip);
-
+    GrpKundentyp.Location = new Point(14, 67);
+    GrpKundentyp.Margin = new Padding(3, 4, 3, 4);
+    GrpKundentyp.Name = "GrpKundentyp";
+    GrpKundentyp.Padding = new Padding(3, 4, 3, 4);
+    GrpKundentyp.Size = new Size(251, 127);
+    GrpKundentyp.TabIndex = 2;
+    GrpKundentyp.TabStop = false;
+    GrpKundentyp.Text = "Kundentyp";
+    // 
     // RadNormal
+    // 
     RadNormal.AutoSize = true;
     RadNormal.Checked = true;
-    RadNormal.Location = new Point(10, 20);
+    RadNormal.Location = new Point(11, 27);
+    RadNormal.Margin = new Padding(3, 4, 3, 4);
     RadNormal.Name = "RadNormal";
+    RadNormal.Size = new Size(114, 24);
+    RadNormal.TabIndex = 0;
+    RadNormal.TabStop = true;
     RadNormal.Text = "Normal (0%)";
-
+    // 
     // RadPremium
+    // 
     RadPremium.AutoSize = true;
-    RadPremium.Location = new Point(10, 45);
+    RadPremium.Location = new Point(11, 60);
+    RadPremium.Margin = new Padding(3, 4, 3, 4);
     RadPremium.Name = "RadPremium";
+    RadPremium.Size = new Size(131, 24);
+    RadPremium.TabIndex = 1;
     RadPremium.Text = "Premium (10%)";
-
+    // 
     // RadVip
+    // 
     RadVip.AutoSize = true;
-    RadVip.Location = new Point(10, 68);
+    RadVip.Location = new Point(11, 91);
+    RadVip.Margin = new Padding(3, 4, 3, 4);
     RadVip.Name = "RadVip";
+    RadVip.Size = new Size(93, 24);
+    RadVip.TabIndex = 2;
     RadVip.Text = "VIP (20%)";
-
+    // 
     // ChkLehrling
+    // 
     ChkLehrling.AutoSize = true;
-    ChkLehrling.Location = new Point(12, 155);
+    ChkLehrling.Location = new Point(14, 207);
+    ChkLehrling.Margin = new Padding(3, 4, 3, 4);
     ChkLehrling.Name = "ChkLehrling";
+    ChkLehrling.Size = new Size(128, 24);
+    ChkLehrling.TabIndex = 3;
     ChkLehrling.Text = "Lehrling (+5%)";
-
+    // 
     // CmdBerechnen
-    CmdBerechnen.Location = new Point(12, 185);
+    // 
+    CmdBerechnen.Location = new Point(14, 247);
+    CmdBerechnen.Margin = new Padding(3, 4, 3, 4);
     CmdBerechnen.Name = "CmdBerechnen";
-    CmdBerechnen.Size = new Size(130, 28);
+    CmdBerechnen.Size = new Size(149, 37);
+    CmdBerechnen.TabIndex = 4;
     CmdBerechnen.Text = "Berechnen";
     CmdBerechnen.Click += CmdBerechnen_Click;
-
+    // 
     // LblErgebnis
+    // 
     LblErgebnis.AutoSize = true;
-    LblErgebnis.Location = new Point(12, 225);
+    LblErgebnis.Location = new Point(14, 300);
     LblErgebnis.Name = "LblErgebnis";
-    LblErgebnis.Text = "";
-
+    LblErgebnis.Size = new Size(0, 20);
+    LblErgebnis.TabIndex = 5;
+    // 
     // RabattKalkulatorForm
-    AutoScaleDimensions = new SizeF(7F, 15F);
+    // 
+    AutoScaleDimensions = new SizeF(8F, 20F);
     AutoScaleMode = AutoScaleMode.Font;
-    ClientSize = new Size(360, 270);
+    ClientSize = new Size(411, 419);
     Controls.Add(LblBetrag);
     Controls.Add(TxtBetrag);
     Controls.Add(GrpKundentyp);
     Controls.Add(ChkLehrling);
     Controls.Add(CmdBerechnen);
     Controls.Add(LblErgebnis);
+    Margin = new Padding(3, 4, 3, 4);
     Name = "RabattKalkulatorForm";
     Text = "Rabatt-Kalkulator – Auftrag 3";
     GrpKundentyp.ResumeLayout(false);
