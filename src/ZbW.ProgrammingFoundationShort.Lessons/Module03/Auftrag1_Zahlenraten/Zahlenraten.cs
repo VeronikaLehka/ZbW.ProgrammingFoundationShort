@@ -18,17 +18,49 @@ public static class Zahlenraten
   public static void Start()
   {
     // TODO 1: Random-Objekt erstellen, Zufallszahl 1-100 generieren
-    //         var random = new Random();
-    //         int geheimzahl = random.Next(1, 101);
+    var random = new Random();
+
 
     // TODO 2: Variablen für Versuchszähler und geraten-Flag
+    int counter = 0;
+    int geheimzahl = random.Next(1, 101);
+    bool istGeraten = false;
 
     // TODO 3: while-Schleife (!geraten)
     //         - Eingabe lesen
     //         - int.TryParse prüfen
     //         - Hinweis ausgeben (zu klein / zu gross / richtig)
     //         - Versuchszähler erhöhen
+    Console.WriteLine("Zahlenraten (1 bis 100)");
 
-    // TODO 4: Glückwunsch mit Anzahl Versuche ausgeben
+    while (!istGeraten)
+    {
+      Console.WriteLine("Deine Zahl zwischen 1 - 100: ");
+      string eingabe = Console.ReadLine() ?? "";
+
+      if (!int.TryParse(eingabe, out int zahl))
+      {
+        Console.WriteLine("Bitte eine ganze Zahl eingeben.");
+        continue;
+      }
+
+      counter++;
+
+      if (zahl < geheimzahl)
+      {
+        Console.WriteLine("Deine Zahl ist kleiner als Geheimzahl.");
+        counter++;
+      }
+      else if (zahl > geheimzahl)
+      {
+        Console.WriteLine("Deine Zahl ist grösser als Geheimzahl.");
+        counter++;
+      }
+      // TODO 4: Glückwunsch mit Anzahl Versuche ausgeben
+      else
+      {
+        Console.WriteLine($"Glückwunsch! Du hast die Geheimzahl {geheimzahl} in {counter} Versuche erraten. ");
+      }
+    }
   }
 }

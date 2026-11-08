@@ -1,5 +1,5 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module03.Auftrag3_SichererDateiLeser;
-
+  
 // ============================================================
 // AUFTRAG 3 – SichererDateiLeser (⭐⭐⭐ Erweitert | ~30 Min.)
 //
@@ -25,18 +25,40 @@ public partial class SichererDateiLeserForm : Form
     LstZeilen.Items.Clear();
 
     // TODO 1: try-catch-finally starten
-
     // TODO 2: im try-Block:
     //         string[] zeilen = File.ReadAllLines(TxtPfad.Text);
     //         for-Schleife: LstZeilen.Items.Add($"{i+1}: {zeilen[i]}")
+    try
+    {
+      string[] zeilen = File.ReadAllLines(TxtPfad.Text);
+      for (int i = 0; i < zeilen.Length; i++)
+      {
+        LstZeilen.Items.Add($"{i + 1}: {zeilen[i]}");
+      }
+      LblStatus.Text = $"{zeilen.Length} Zeilen geladen.";
+    }
 
     // TODO 3: catch (FileNotFoundException ex):
     //         MessageBox mit Datei-nicht-gefunden-Meldung
+    catch (FileNotFoundException ex)
+    {
+      MessageBox.Show("Datei nicht gefunden.");
+      LblPfad.Text = "Fehler! Datei nicht gefunden.";
+    }
 
     // TODO 4: catch (Exception ex):
     //         MessageBox mit allgemeiner Fehlermeldung
+    catch (Exception ex)
+    {
+      MessageBox.Show($"fehler:{ex.Message}.");
+      LblPfad.Text = "Fehler beim Lesen.";
+    }
 
     // TODO 5: finally (läuft immer):
     //         CmdLesen.Enabled = true;
+    finally
+    {
+      CmdLesen.Enabled = true;
+    }
   }
 }
