@@ -30,7 +30,7 @@ internal static class Program
 
     // ---- Modul 04 ----
     // ZbW.ProgrammingFoundationShort.Lessons.Module04.Auftrag1_StatistikRechner.StatistikRechner.Start();
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module04.Auftrag2_NotenVerwaltung.NotenVerwaltungForm());
+    //Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module04.Auftrag2_NotenVerwaltung.NotenVerwaltungForm());
     // ZbW.ProgrammingFoundationShort.Lessons.Module04.Auftrag3_MatrixMultiplikation.MatrixRechner.Start();
 
     // ---- Modul 05 ----
